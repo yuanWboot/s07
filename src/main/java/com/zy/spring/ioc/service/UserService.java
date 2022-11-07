@@ -3,6 +3,7 @@ package com.zy.spring.ioc.service;
 import com.zy.spring.ioc.dao.IUserDao;
 import com.zy.spring.ioc.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +12,16 @@ import javax.annotation.PostConstruct;
 @Service
 @Scope("prototype")  //设置单例或多例 ，与XML中bean scope 完全相同
 public class UserService {
+    //为某个属性设置静态数值
+    @Value("${metaData}") //读取config.properties的metaData属性值
+    private String metaData;
     @Autowired
     // spring IoC容器通过反射技术将属性private修饰符自动转为public，自动进行赋值，不再执行setter方法
     private UserDao userDao;
 
     @PostConstruct   //XML 中init-method完全相同
     public void init(){
-        System.out.println("初始化UserService对象");
+        System.out.println("初始化UserService对象，metaData="+metaData);
     }
     private IUserDao udao;
 
