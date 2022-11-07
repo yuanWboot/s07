@@ -1,5 +1,6 @@
 package com.zy.spring.ioc;
 
+import com.zy.spring.ioc.service.DepartmentService;
 import com.zy.spring.ioc.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,5 +16,8 @@ public class SpringApplication {
 //        }
         UserService userService = context.getBean("userService", UserService.class);
         System.out.println(userService.getUserDao());
+
+        DepartmentService departmentService = context.getBean("departmentService", DepartmentService.class);
+        departmentService.joinDepartment();
     }
 }

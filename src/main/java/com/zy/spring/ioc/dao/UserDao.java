@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 //@Repository("udao")
 @Repository
-public class UserDao {
+public class UserDao implements IUserDao{
     public UserDao(){
         System.out.println("正在创建UserDao:"+this);
     }
