@@ -20,8 +20,8 @@ public class UserService {
 
     //@Autowired
     //如果装配注解放在setter方法上，则自动按类型/名称对setter方法参数进行注入
-    public void setUserDao(UserDao userDao) {
-        System.out.println("setUserDao:"+userDao);
-        this.userDao = userDao;
-    }
+//    public void setUserDao(UserDao userDao) {
+//        System.out.println("setUserDao:"+userDao);
+//        this.userDao = userDao;
+//    }
 }
